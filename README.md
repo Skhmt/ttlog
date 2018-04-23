@@ -4,7 +4,7 @@ Terminal and browser console colorizer
 ## Usage in node.js
 ```js
 const log = require('ttlog');
-log`hello {white.bgBlack darkness} {red my} {green old} {blue friend} {cyan I've} {magenta come} {yellow to} {underline talk} {to} {black.bgCyan you} {underline.red.bgBlack again}`;
+log`hello {white.bgBlack darkness} {underline my} {green old} {underline.blue.bgYellow friend}`;
 ```
 
 ## Usage in the browser
@@ -12,7 +12,7 @@ log`hello {white.bgBlack darkness} {red my} {green old} {blue friend} {cyan I've
 <script src="./log.js"></script>
 ```
 ```js
-log`hello {white.bgBlack darkness} {red my} {green old} {blue friend} {cyan I've} {magenta come} {yellow to} {underline talk} {to} {black.bgCyan you} {underline.red.bgBlack again}`;
+log`hello {white.bgBlack darkness} {underline my} {green old} {underline.blue.bgYellow friend}`;
 ```
 
 ## API
