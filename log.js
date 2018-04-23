@@ -11,8 +11,7 @@ function __DEFINE_TTLOG (strings, ...keys) {
 	
 	let outputBuilder = '';
 	let browserCss = []; // for browser context only
-	let bracesOpen = false;
-
+	
 	const _cssRed = 'rgb(241,76,76)';
 	const _cssGreen = 'rgb(35,209,139)';
 	const _cssBlue = 'rgb(59,142,234)';
