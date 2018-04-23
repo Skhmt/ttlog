@@ -10,7 +10,7 @@ function __DEFINE_TTLOG (strings, ...keys) {
 	const isNode = !(typeof(window) === 'object');
 	
 	let outputBuilder = '';
-	let browserCss = []; // for browser context only
+	let browserCss = [];
 	
 	const _cssRed = 'rgb(241,76,76)';
 	const _cssGreen = 'rgb(35,209,139)';
