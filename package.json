@@ -1,0 +1,25 @@
+{
+  "name": "ttlog",
+  "version": "1.0.0",
+  "description": "Terminal and browser console colorizer",
+  "main": "log.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Skhmt/ttlog.git"
+  },
+  "keywords": [
+    "console",
+    "terminal",
+    "color",
+    "log"
+  ],
+  "author": "skhmt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Skhmt/ttlog/issues"
+  },
+  "homepage": "https://github.com/Skhmt/ttlog#readme"
+}
