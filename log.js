@@ -1,9 +1,6 @@
 // tagged color logs in browser and console
 // usage: log`hell{underline o} {green.bgBlack world}`
 
-// if (typeof(window) === 'object') export default {log};
-// else module.exports = log;
-
 if (typeof(module) === 'object' && module.exports) module.exports = log;
 
 function log (strings, ...keys) {
