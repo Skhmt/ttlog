@@ -7,7 +7,7 @@ console.time('template test');
 log`template test {bgGreen.red a${1}bc} {red ${2}d${3}} {bgGreen ${4}ef}`;
 console.timeEnd('template test');
 
-log`hello {white.bgBlack darkness} {red my} {green old} {blue friend} {cyan I've} {magenta come} {yellow to} {underline talk} {to} {black.bgCyan you} {underline.red.bgBlack again}`
+log`hello {white.bgBlack darkness} {red my} {green old} {blue friend} {cyan I've} {magenta come} {yellow to} {underline.white talk} {to} {black.bgCyan you} {underline.red.bgBlack again}`
 log`{black.bgWhite black white}`
 log`{white.bgRed white red}`
 log`{red.bgGreen red green}`
