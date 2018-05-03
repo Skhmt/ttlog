@@ -13,7 +13,7 @@ log`hello {white.bgBlack darkness} {underline my} {green old} {underline.blue.bg
 ```js
 const fs = require('fs');
 const log = require('ttlog');
-fs.appendFile('mylog.log', log`{white.bgRed ${Date.now()}}:{red Bad things happened!!}`);
+fs.appendFile('mylog.log', log`{blue ${Date.now()}}: {green Bad things happened!!}`);
 ```
 
 ## Usage in the browser
