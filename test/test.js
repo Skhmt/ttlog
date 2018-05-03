@@ -1,20 +1,21 @@
 
-let log = require('../dist/ttlog.min.js');
+const log = require('../dist/ttlog.min.js');
+const {performance} = require('perf_hooks');
 
 //// TESTS
 
-console.time('template test');
-log`template test {bgGreen.red a${1}bc} {red ${2}d${3}} {bgGreen ${4}ef}`;
-console.timeEnd('template test');
-
-log`hello {white.bgBlack darkness} {red my} {green old} {blue friend} {cyan I've} {magenta come} {yellow to} {underline.white talk} {to} {black.bgCyan you} {underline.red.bgBlack again}`
-log`{black.bgWhite black white}`
-log`{white.bgRed white red}`
-log`{red.bgGreen red green}`
-log`{green.bgBlue green blue}`
-log`{blue.bgMagenta blue magenta}`
-log`{cyan.bgYellow cyan yellow}`
-log`{magenta.bgCyan magenta cyan}`
-log`{yellow.bgBlack yellow black}`
-log`{underline underline}`
-console.log('this is normal text from console.log()')
+const startTime = performance.now();
+log`{black.bgWhite black text | white background}`;
+log`{white.bgRed white text | red background}`;
+log`{red.bgGreen red text | green background}`;
+log`{green.bgBlue green text | blue background}`;
+log`{blue.bgMagenta blue text | magenta background}`;
+log`{cyan.bgYellow cyan text | yellow background}`;
+log`{magenta.bgCyan magenta text | cyan background}`;
+log`{yellow.bgBlack yellow text | black background}`;
+log`{underline underline}`;
+log`{red Multiple} {white text} {blue coloring}`;
+log`{cyan ${'template'} ${'t' + 'e' + 's' + 't'}}`;
+const runTime = performance.now() - startTime;
+const averageTime = runTime / 11;
+console.log(`Average parse time for the above: ${averageTime}ms`)
