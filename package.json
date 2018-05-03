@@ -2,9 +2,10 @@
   "name": "ttlog",
   "version": "1.0.0",
   "description": "Terminal and browser console colorizer",
-  "main": "log.js",
+  "main": "index.js",
   "scripts": {
-    "test": "node test.js"
+    "testNode": "node test/test.js",
+    "testWeb": "start test/test.html"
   },
   "repository": {
     "type": "git",

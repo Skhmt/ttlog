@@ -11,7 +11,7 @@ log`hello {white.bgBlack darkness} {underline my} {green old} {underline.blue.bg
 
 ## Usage in the browser
 ```html
-<script src="log.js"></script>
+<script src="ttlog.min.js"></script>
 ```
 ```js
 log`hello {white.bgBlack darkness} {underline my} {green old} {underline.blue.bgYellow friend}`;
