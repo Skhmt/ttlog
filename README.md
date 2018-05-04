@@ -17,15 +17,15 @@ fs.appendFile('mylog.log', log`{blue ${Date.now()}}: {green Bad things happened!
 ```
 
 ## Usage in the browser
-Put this in your html
+Put this in your html (head or body) if you host the file yourself:
 ```html
 <script src="ttlog.min.js"></script>
 ```
-or remotely:
+alternatively, if you want to use it from a CDN:
 ```html
 <script src="https://cdn.rawgit.com/Skhmt/ttlog/1c45acfc/dist/ttlog.min.js" integrity="sha384-6nnP4ihGtHRWG+5gRLMmuhdrXaeB3gp3u/AYtIBg5omethw9PFen53Ou1Kz1nIuE" crossorigin="anonymous"></script>
 ```
-And this in your script
+Use it like this in a `.js` or `<script>` tag:
 ```js
 log`hello {white.bgBlack darkness} {underline my} {green old} {underline.blue.bgYellow friend}`;
 ```
