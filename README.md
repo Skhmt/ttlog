@@ -1,7 +1,7 @@
-# ttlog
+# ttlog (tagged template log)
 Terminal and browser console colorizer
 
-ttlog `console.log()`s using [tagged template](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#Tagged_templates) syntax similar to chalk.js, but works in both the browser and terminal (Windows 10, unix/linux, and macOS). ttlog also returns the plain-text string without colorization information so you can output it to a file or whatever.
+Ttlog `console.log()`s using tagged template syntax similar to chalk.js, but works in both the browser and terminal (Windows 10, unix/linux, and macOS). Ttlog also returns the plain-text string without colorization information so you can output it to a file or whatever.
 
 ## Usage in node.js or webpack
 ```js
@@ -49,3 +49,18 @@ log`hello {white.bgBlack darkness} {underline my} {green old} {underline.blue.bg
 - bgBlack
 - bgWhite
 - underline
+
+## Todo
+
+- Support console.info/warn/etc?
+	- Problem is node doesn't support those, so it won't be consistent behavior
+- Support `import`
+	- `import` and `require` are competing and I haven't found a way to allow both from the same .js file
+
+## Further reading and interesting links
+
+- [Chrome console colors](https://coderwall.com/p/fskzdw/colorful-console-log): For browser console
+- [ANSI escape colors](https://en.wikipedia.org/wiki/ANSI_escape_code#Colors): For terminal/cmd
+- [Tagged templates](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#Tagged_templates): ES2015
+- [Chalk](https://github.com/chalk/chalk): What inspired this
+- [Generate SRI hash code](https://www.srihash.org/): Yay security
