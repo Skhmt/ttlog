@@ -1,6 +1,6 @@
 {
   "name": "ttlog",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Terminal and browser console colorizer",
   "main": "index.js",
   "scripts": {
