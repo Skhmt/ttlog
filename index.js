@@ -44,49 +44,59 @@ function __TTLOG (strings, ...keys) {
 			let output = '';
 			if (inBrowser) {
 				output = '%c';
-				let css = '';
-				if (apiList.includes('red')) css += `color: ${_cssRed};`;
-				else if (apiList.includes('green')) css += `color: ${_cssGreen};`;
-				else if (apiList.includes('blue')) css += `color: ${_cssBlue};`;
-				else if (apiList.includes('cyan')) css += `color: ${_cssCyan};`;
-				else if (apiList.includes('magenta')) css += `color: ${_cssMagenta};`;
-				else if (apiList.includes('yellow')) css += `color: ${_cssYellow};`;
-				else if (apiList.includes('black')) css += `color: ${_cssBlack};`;
-				else if (apiList.includes('white')) css += `color: ${_cssWhite};`;
+				
+				let css = 'color: ';
+				
+				if (apiList.includes('red')) css += _cssRed;
+				else if (apiList.includes('green')) css += _cssGreen;
+				else if (apiList.includes('blue')) css += _cssBlue;
+				else if (apiList.includes('cyan')) css += _cssCyan;
+				else if (apiList.includes('magenta')) css += _cssMagenta;
+				else if (apiList.includes('yellow')) css += _cssYellow;
+				else if (apiList.includes('black')) css += _cssBlack;
+				else if (apiList.includes('white')) css += _cssWhite;
+				
+				css += ';background-color: ';
+				
+				if (apiList.includes('bgRed')) css += _cssRed;
+				else if (apiList.includes('bgGreen')) css += _cssGreen;
+				else if (apiList.includes('bgBlue')) css += _cssBlue;
+				else if (apiList.includes('bgCyan')) css += _cssCyan;
+				else if (apiList.includes('bgMagenta')) css += _cssMagenta;
+				else if (apiList.includes('bgYellow')) css += _cssYellow;
+				else if (apiList.includes('bgBlack')) css += _cssBlack;
+				else if (apiList.includes('bgWhite')) css += _cssWhite;
 
-				if (apiList.includes('bgRed')) css += `background-color: ${_cssRed};`;
-				else if (apiList.includes('bgGreen')) css += `background-color: ${_cssGreen};`;
-				else if (apiList.includes('bgBlue')) css += `background-color: ${_cssBlue};`;
-				else if (apiList.includes('bgCyan')) css += `background-color: ${_cssCyan};`;
-				else if (apiList.includes('bgMagenta')) css += `background-color: ${_cssMagenta};`;
-				else if (apiList.includes('bgYellow')) css += `background-color: ${_cssYellow};`;
-				else if (apiList.includes('bgBlack')) css += `background-color: ${_cssBlack};`;
-				else if (apiList.includes('bgWhite')) css += `background-color: ${_cssWhite};`;
-
+				css += ';';
+				
 				if (apiList.includes('underline')) css += 'text-decoration: underline;';
-
+				
 				browserCss.push(css);
 			}
 			else {
-				if (apiList.includes('red')) output += '\x1b[91m';
-				else if (apiList.includes('green')) output += '\x1b[92m';
-				else if (apiList.includes('blue')) output += '\x1b[94m';
-				else if (apiList.includes('cyan')) output += '\x1b[96m';
-				else if (apiList.includes('magenta')) output += '\x1b[95m';
-				else if (apiList.includes('yellow')) output += '\x1b[93m';
-				else if (apiList.includes('black')) output += '\x1b[90m';
-				else if (apiList.includes('white')) output += '\x1b[97m';
+				output += '\u001b[';
+				
+				if (apiList.includes('red')) output += '91;';
+				else if (apiList.includes('green')) output += '92;';
+				else if (apiList.includes('blue')) output += '94;';
+				else if (apiList.includes('cyan')) output += '96;';
+				else if (apiList.includes('magenta')) output += '95;';
+				else if (apiList.includes('yellow')) output += '93;';
+				else if (apiList.includes('black')) output += '90;';
+				else if (apiList.includes('white')) output += '97;';
 
-				if (apiList.includes('bgRed')) output += '\x1b[101m';
-				else if (apiList.includes('bgGreen')) output += '\x1b[102m';
-				else if (apiList.includes('bgBlue')) output += '\x1b[104m';
-				else if (apiList.includes('bgCyan')) output += '\x1b[106m';
-				else if (apiList.includes('bgMagenta')) output += '\x1b[105m';
-				else if (apiList.includes('bgYellow')) output += '\x1b[103m';
-				else if (apiList.includes('bgBlack')) output += '\x1b[100m';
-				else if (apiList.includes('bgWhite')) output += '\x1b[107m';
+				if (apiList.includes('bgRed')) output += '101;';
+				else if (apiList.includes('bgGreen')) output += '102;';
+				else if (apiList.includes('bgBlue')) output += '104;';
+				else if (apiList.includes('bgCyan')) output += '106;';
+				else if (apiList.includes('bgMagenta')) output += '105;';
+				else if (apiList.includes('bgYellow')) output += '103;';
+				else if (apiList.includes('bgBlack')) output += '100;';
+				else if (apiList.includes('bgWhite')) output += '107;';
 
-				if (apiList.includes('underline')) output += '\x1b[4m';
+				if (apiList.includes('underline')) output += '4;';
+				
+				output += 'm';
 			}
 
 			// adding back in the regular text to be colorized
@@ -97,7 +107,7 @@ function __TTLOG (strings, ...keys) {
 				browserCss.push('color:;background-color:;');
 				output += '%c';
 			}
-			else output += '\x1b[0m';
+			else output += '\u001b[0m';
 
 			return output;
 		} // (match, g1, g2) => {
