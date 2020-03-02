@@ -79,27 +79,25 @@ function __TTLOG (strings, ...keys) {
 
 				const mods = [];
 
-				if (has('red')) mods.push('91');
-				else if (has('green')) mods.push('92');
-				else if (has('blue')) mods.push('94');
-				else if (has('cyan')) mods.push('96');
-				else if (has('magenta')) mods.push('95');
-				else if (has('yellow')) mods.push('93');
-				else if (has('black')) mods.push('90');
-				else if (has('white')) mods.push('97');
+				if (has('red')) output += '\x1b[91m';
+				else if (has('green')) output += '\x1b[92m';
+				else if (has('blue')) output += '\x1b[94m';
+				else if (has('cyan')) output += '\x1b[96m';
+				else if (has('magenta')) output += '\x1b[95m';
+				else if (has('yellow')) output += '\x1b[93m';
+				else if (has('black')) output += '\x1b[90m';
+				else if (has('white')) output += '\x1b[97m';
 
-				if (has('bgRed')) mods.push('101');
-				else if (has('bgGreen')) mods.push('102');
-				else if (has('bgBlue')) mods.push('104');
-				else if (has('bgCyan')) mods.push('106');
-				else if (has('bgMagenta')) mods.push('105');
-				else if (has('bgYellow')) mods.push('103');
-				else if (has('bgBlack')) mods.push('100');
-				else if (has('bgWhite')) mods.push('107');
+				if (has('bgRed')) output += '\x1b[101m';
+				else if (has('bgGreen')) output += '\x1b[102m';
+				else if (has('bgBlue')) output += '\x1b[104m';
+				else if (has('bgCyan')) output += '\x1b[106m';
+				else if (has('bgMagenta')) output += '\x1b[105m';
+				else if (has('bgYellow')) output += '\x1b[103m';
+				else if (has('bgBlack')) output += '\x1b[100m';
+				else if (has('bgWhite')) output += '\x1b[107m';
 
-				if (has('underline')) mods.push('4');
-				
-				output += mods.join(';') + 'm';
+				if (has('underline')) output += '\x1b[4m';
 			}
 
 			// adding back in the regular text to be colorized
@@ -110,7 +108,7 @@ function __TTLOG (strings, ...keys) {
 				browserCss.push('color:;background-color:;');
 				output += '%c';
 			}
-			else output += '\u001b[0m';
+			else output += '\x1b[0m';
 
 			return output;
 		} // (match, g1, g2) => {
