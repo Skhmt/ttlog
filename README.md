@@ -21,10 +21,7 @@ Put this in your html (head or body) if you host the file yourself:
 ```html
 <script src="ttlog.min.js"></script>
 ```
-alternatively, if you want to use it from a CDN:
-```html
-<script src="https://cdn.rawgit.com/Skhmt/ttlog/58039217/dist/ttlog.min.js" integrity="sha384-cRYb13kHGM4ZBz3rTUZcdM3cI2wMGQSFiaBY0AR5WCzlZX6XSb49fgHnTgbzqtQ9" crossorigin="anonymous"></script>
-```
+
 Use it like this in a `.js` or `<script>` tag:
 ```js
 log`hello {white.bgBlack darkness} {underline my} {green old} {underline.blue.bgYellow friend}`;
