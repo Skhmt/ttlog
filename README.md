@@ -21,6 +21,10 @@ Put this in your html (head or body) if you host the file yourself:
 ```html
 <script src="ttlog.min.js"></script>
 ```
+or via CDN:
+```html
+ <script src="https://cdn.jsdelivr.net/npm/ttlog@1.2.2/dist/ttlog.min.js" integrity="sha384-PB71lhO4NaMS65f5FGJEpZnsS0S+Qk5EK4AoG9VzhS8ZNJQS6ndKlXHXRStzwuvq" crossorigin="anonymous"></script> 
+```
 
 Use it like this in a `.js` or `<script>` tag:
 ```js
