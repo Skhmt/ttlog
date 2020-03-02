@@ -76,23 +76,23 @@ function __TTLOG (strings, ...keys) {
 			else {
 				output += '\u001b[';
 				
-				if (apiList.includes('red')) output += '91;';
-				else if (apiList.includes('green')) output += '92;';
-				else if (apiList.includes('blue')) output += '94;';
-				else if (apiList.includes('cyan')) output += '96;';
-				else if (apiList.includes('magenta')) output += '95;';
-				else if (apiList.includes('yellow')) output += '93;';
-				else if (apiList.includes('black')) output += '90;';
-				else if (apiList.includes('white')) output += '97;';
+				if (apiList.includes('red')) output += '91';
+				else if (apiList.includes('green')) output += '92';
+				else if (apiList.includes('blue')) output += '94';
+				else if (apiList.includes('cyan')) output += '96';
+				else if (apiList.includes('magenta')) output += '95';
+				else if (apiList.includes('yellow')) output += '93';
+				else if (apiList.includes('black')) output += '90';
+				else if (apiList.includes('white')) output += '97';
 
-				if (apiList.includes('bgRed')) output += '101;';
-				else if (apiList.includes('bgGreen')) output += '102;';
-				else if (apiList.includes('bgBlue')) output += '104;';
-				else if (apiList.includes('bgCyan')) output += '106;';
-				else if (apiList.includes('bgMagenta')) output += '105;';
-				else if (apiList.includes('bgYellow')) output += '103;';
-				else if (apiList.includes('bgBlack')) output += '100;';
-				else if (apiList.includes('bgWhite')) output += '107;';
+				if (apiList.includes('bgRed')) output += '101';
+				else if (apiList.includes('bgGreen')) output += '102';
+				else if (apiList.includes('bgBlue')) output += '104';
+				else if (apiList.includes('bgCyan')) output += '106';
+				else if (apiList.includes('bgMagenta')) output += '105';
+				else if (apiList.includes('bgYellow')) output += '103';
+				else if (apiList.includes('bgBlack')) output += '100';
+				else if (apiList.includes('bgWhite')) output += '107';
 
 				if (apiList.includes('underline')) output += '4;';
 				
