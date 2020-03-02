@@ -41,62 +41,65 @@ function __TTLOG (strings, ...keys) {
 		apiRegex,
 		(match, g1, g2) => {
 			let apiList = g1.slice(1, -1).split('.');
+			const has = (str) => apiList.includes(str);
 			let output = '';
 			if (inBrowser) {
 				output = '%c';
 				
 				let css = 'color: ';
 				
-				if (apiList.includes('red')) css += _cssRed;
-				else if (apiList.includes('green')) css += _cssGreen;
-				else if (apiList.includes('blue')) css += _cssBlue;
-				else if (apiList.includes('cyan')) css += _cssCyan;
-				else if (apiList.includes('magenta')) css += _cssMagenta;
-				else if (apiList.includes('yellow')) css += _cssYellow;
-				else if (apiList.includes('black')) css += _cssBlack;
-				else if (apiList.includes('white')) css += _cssWhite;
+				if (has('red')) css += _cssRed;
+				else if (has('green')) css += _cssGreen;
+				else if (has('blue')) css += _cssBlue;
+				else if (has('cyan')) css += _cssCyan;
+				else if (has('magenta')) css += _cssMagenta;
+				else if (has('yellow')) css += _cssYellow;
+				else if (has('black')) css += _cssBlack;
+				else if (has('white')) css += _cssWhite;
 				
 				css += ';background-color: ';
 				
-				if (apiList.includes('bgRed')) css += _cssRed;
-				else if (apiList.includes('bgGreen')) css += _cssGreen;
-				else if (apiList.includes('bgBlue')) css += _cssBlue;
-				else if (apiList.includes('bgCyan')) css += _cssCyan;
-				else if (apiList.includes('bgMagenta')) css += _cssMagenta;
-				else if (apiList.includes('bgYellow')) css += _cssYellow;
-				else if (apiList.includes('bgBlack')) css += _cssBlack;
-				else if (apiList.includes('bgWhite')) css += _cssWhite;
+				if (has('bgRed')) css += _cssRed;
+				else if (has('bgGreen')) css += _cssGreen;
+				else if (has('bgBlue')) css += _cssBlue;
+				else if (has('bgCyan')) css += _cssCyan;
+				else if (has('bgMagenta')) css += _cssMagenta;
+				else if (has('bgYellow')) css += _cssYellow;
+				else if (has('bgBlack')) css += _cssBlack;
+				else if (has('bgWhite')) css += _cssWhite;
 
 				css += ';';
 				
-				if (apiList.includes('underline')) css += 'text-decoration: underline;';
+				if (has('underline')) css += 'text-decoration: underline;';
 				
 				browserCss.push(css);
 			}
 			else {
 				output += '\u001b[';
-				
-				if (apiList.includes('red')) output += '91';
-				else if (apiList.includes('green')) output += '92';
-				else if (apiList.includes('blue')) output += '94';
-				else if (apiList.includes('cyan')) output += '96';
-				else if (apiList.includes('magenta')) output += '95';
-				else if (apiList.includes('yellow')) output += '93';
-				else if (apiList.includes('black')) output += '90';
-				else if (apiList.includes('white')) output += '97';
 
-				if (apiList.includes('bgRed')) output += '101';
-				else if (apiList.includes('bgGreen')) output += '102';
-				else if (apiList.includes('bgBlue')) output += '104';
-				else if (apiList.includes('bgCyan')) output += '106';
-				else if (apiList.includes('bgMagenta')) output += '105';
-				else if (apiList.includes('bgYellow')) output += '103';
-				else if (apiList.includes('bgBlack')) output += '100';
-				else if (apiList.includes('bgWhite')) output += '107';
+				const mods = [];
 
-				if (apiList.includes('underline')) output += '4;';
+				if (has('red')) mods.push('91');
+				else if (has('green')) mods.push('92');
+				else if (has('blue')) mods.push('94');
+				else if (has('cyan')) mods.push('96');
+				else if (has('magenta')) mods.push('95');
+				else if (has('yellow')) mods.push('93');
+				else if (has('black')) mods.push('90');
+				else if (has('white')) mods.push('97');
+
+				if (has('bgRed')) mods.push('101');
+				else if (has('bgGreen')) mods.push('102');
+				else if (has('bgBlue')) mods.push('104');
+				else if (has('bgCyan')) mods.push('106');
+				else if (has('bgMagenta')) mods.push('105');
+				else if (has('bgYellow')) mods.push('103');
+				else if (has('bgBlack')) mods.push('100');
+				else if (has('bgWhite')) mods.push('107');
+
+				if (has('underline')) mods.push('4');
 				
-				output += 'm';
+				output += mods.join(';') + 'm';
 			}
 
 			// adding back in the regular text to be colorized
