@@ -75,29 +75,27 @@ function __TTLOG (strings, ...keys) {
 				browserCss.push(css);
 			}
 			else {
-				output += '\u001b[';
-
 				const mods = [];
 
-				if (has('red')) output += '\x1b[91m';
-				else if (has('green')) output += '\x1b[92m';
-				else if (has('blue')) output += '\x1b[94m';
-				else if (has('cyan')) output += '\x1b[96m';
-				else if (has('magenta')) output += '\x1b[95m';
-				else if (has('yellow')) output += '\x1b[93m';
-				else if (has('black')) output += '\x1b[90m';
-				else if (has('white')) output += '\x1b[97m';
+				if (has('red')) output += '\u001b[91m';
+				else if (has('green')) output += '\u001b[92m';
+				else if (has('blue')) output += '\u001b[94m';
+				else if (has('cyan')) output += '\u001b[96m';
+				else if (has('magenta')) output += '\u001b[95m';
+				else if (has('yellow')) output += '\u001b[93m';
+				else if (has('black')) output += '\u001b[90m';
+				else if (has('white')) output += '\u001b[97m';
 
-				if (has('bgRed')) output += '\x1b[101m';
-				else if (has('bgGreen')) output += '\x1b[102m';
-				else if (has('bgBlue')) output += '\x1b[104m';
-				else if (has('bgCyan')) output += '\x1b[106m';
-				else if (has('bgMagenta')) output += '\x1b[105m';
-				else if (has('bgYellow')) output += '\x1b[103m';
-				else if (has('bgBlack')) output += '\x1b[100m';
-				else if (has('bgWhite')) output += '\x1b[107m';
+				if (has('bgRed')) output += '\u001b[101m';
+				else if (has('bgGreen')) output += '\u001b[102m';
+				else if (has('bgBlue')) output += '\u001b[104m';
+				else if (has('bgCyan')) output += '\u001b[106m';
+				else if (has('bgMagenta')) output += '\u001b[105m';
+				else if (has('bgYellow')) output += '\u001b[103m';
+				else if (has('bgBlack')) output += '\u001b[100m';
+				else if (has('bgWhite')) output += '\u001b[107m';
 
-				if (has('underline')) output += '\x1b[4m';
+				if (has('underline')) output += '\u001b[4m';
 			}
 
 			// adding back in the regular text to be colorized
@@ -108,7 +106,7 @@ function __TTLOG (strings, ...keys) {
 				browserCss.push('color:;background-color:;');
 				output += '%c';
 			}
-			else output += '\x1b[0m';
+			else output += '\u001b[0m';
 
 			return output;
 		} // (match, g1, g2) => {
